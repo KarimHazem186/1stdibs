@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa"; // use any icon set or SVG
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa"; 
 
 const items = [
   {

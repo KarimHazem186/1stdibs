@@ -8,6 +8,7 @@ import ExcellentValues from './ExcellentValues'
 import BestsellingDesigns from './BestsellingDesigns'
 import SaleSection from './SaleSection'
 import TodayTopDeals from './TodayTopDeals'
+import FeaturedSeller from './FeaturedSeller'
 
 const Home = () => {
   return (
@@ -20,6 +21,7 @@ const Home = () => {
           <BestsellingDesigns />
           <SaleSection />
           <TodayTopDeals />
+          <FeaturedSeller />
   
       </>
   )

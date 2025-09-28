@@ -51,34 +51,14 @@ const items = [
       "https://a.1stdibscdn.com/archivesE/upload/a_321/19_6/art-deco-brooch.jpg",
     link: "#",
   },
-  {
-    title: "Mid-Century Modern Walnut Desk",
-    price: "$3,800",
-    imageUrl:
-      "https://a.1stdibscdn.com/archivesE/upload/a_754/14_2/mid-century-desk.jpg",
-    link: "#",
-  },
-  {
-    title: "Custom Abstract Painting by Local Artist",
-    price: "$2,200",
-    imageUrl:
-      "https://a.1stdibscdn.com/archivesE/upload/a_9981/22_3/abstract-painting.jpg",
-    link: "#",
-  },
-  {
-    title: "Antique Persian Wool Rug",
-    price: "$9,450",
-    imageUrl:
-      "https://a.1stdibscdn.com/archivesE/upload/a_1234/29_1/persian-rug.jpg",
-    link: "#",
-  },
+  
 ];
 
 const repeatedItems = [...items, ...items, ...items];
 
-const BestsellingDesigns = () => {
+const FeaturedSeller = () => {
   const scrollRef = useRef(null);
-  const itemWidth = 260;
+  const itemWidth = 500;
   const gapWidth = 24;
   const scrollAmount = itemWidth + gapWidth;
 
@@ -90,21 +70,6 @@ const BestsellingDesigns = () => {
     }
   }, []);
 
-  const handleScroll = () => {
-    const container = scrollRef.current;
-    if (!container) return;
-
-    const scrollLeft = container.scrollLeft;
-    const scrollWidth = container.scrollWidth;
-    const third = scrollWidth / 3;
-
-    if (scrollLeft < third / 2) {
-      container.scrollLeft = scrollLeft + third;
-    } else if (scrollLeft > third * 1.5) {
-      container.scrollLeft = scrollLeft - third;
-    }
-  };
-
   const scroll = (direction) => {
     const container = scrollRef.current;
     if (!container) return;
@@ -114,60 +79,72 @@ const BestsellingDesigns = () => {
   };
 
   return (
-    <div className="px-6 py-10 relative">
-      {/* Title and View More */}
-      <div className="mb-6 text-center">
-        <h2
-          className="text-3xl text-gray-700"
-          style={{
-            color: "#626262ff",
-            fontFamily: `"Cardinal Classic Short", Georgia, serif`,
-          }}
-        >
-          Bestselling Designs
-        </h2>
-        <a
-          href="#"
-          className="inline-block mt-2 font-medium text-sm text-gray-900 underline"
-        >
-          View More
-        </a>
-      </div>
-
-      {/* Arrows */}
-      <button
-        onClick={() => scroll("left")}
-        className="absolute left-2 top-1/2 -translate-y-1/2 bg-white shadow-md p-2 rounded-full z-10"
-      >
-        <FaChevronLeft />
-      </button>
-
-      <button
-        onClick={() => scroll("right")}
-        className="absolute right-2 top-1/2 -translate-y-1/2 bg-white shadow-md p-2 rounded-full z-10"
-      >
-        <FaChevronRight />
-      </button>
-
-      {/* Scrollable container */}
-      <div
-        ref={scrollRef}
-        onScroll={handleScroll}
-        className="flex space-x-6 overflow-x-auto scrollbar-hide pb-4 scroll-smooth"
-      >
-        {repeatedItems.map((item, idx) => (
-          <div
-            key={idx}
-            className="flex-none w-60 bg-white rounded-lg relative"
+      <>
+      <section className="bg-[#f7f5f0] flex flex-col md:flex-row items-center justify-center md:justify-between px-6 md:px-16 py-10 gap-8">
+        <div className="w-full md:w-1/2 rounded-lg overflow-hidden shadow">
+          <video
+            className="w-full h-full object-cover"
+            controls
+            playsInline
+            preload="auto"
           >
-            {/* Heart Icon - top right */}
-            <div className="absolute top-2 right-2 z-10">
-              <button
-                className="rounded-full p-1"
-                aria-label="Save to favorites"
-                type="button"
-              >
-                <div data-tn="item-save-icon" id={`f_${idx}-heart`}>
+            <source
+              src="https://player.vimeo.com/progressive_redirect/playback/885010749/rendition/540p/file.mp4?loc=external&oauth2_token_id=1186645944&signature=52cdf0b507de53ed2fb8fa738fde1dd92475091386df31a018b31c3afcc55a6a"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div className="w-full md:w-1/2 text-center md:text-left tracking-tightest mx-10">
+          <p className="italic text-gray-600 mb-2">Featured Seller</p>
+          <h2
+            className="text-3xl md:text-4xl font-light leading-snug mb-6"
+            style={{
+              fontFamily: `"Cardinal Classic Short", Georgia, serif`,
+              fontWeight: "300",
+              color: "#626262ff",
+            }}
+          >
+            Handcrafted. Inspired by Bauhaus. <br />
+            Designed by <span className="font-medium">Kateryna Sokolova.</span>
+          </h2>
+          <button className="border rounded border-black px-6 py-3 text-sm tracking-widest hover:bg-black hover:text-white transition">
+            DISCOVER MORE
+          </button>
+        </div>
+      </section>
+
+      <section className="bg-[#f7f5f0] px-6 py-10 relative">
+        
+        <button
+          onClick={() => scroll("left")}
+          className="absolute left-2 top-1/2 -translate-y-1/2 bg-white shadow-md p-2 rounded-full z-10"
+        >
+          <FaChevronLeft />
+        </button>
+        <button
+          onClick={() => scroll("right")}
+          className="absolute right-2 top-1/2 -translate-y-1/2 bg-white shadow-md p-2 rounded-full z-10"
+        >
+          <FaChevronRight />
+        </button>
+
+        <div
+          ref={scrollRef}
+          className="flex space-x-6 overflow-x-auto scrollbar-hide pb-4 scroll-smooth"
+        >
+          {repeatedItems.map((item, idx) => (
+            <div
+              key={idx}
+              className="flex-none w-60 bg-white rounded-lg relative"
+            >
+              <div className="absolute top-2 right-2 z-10">
+                <button
+                  className="rounded-full p-1"
+                  aria-label="Save to favorites"
+                  type="button"
+                >
                   <svg
                     className="w-5 h-5 text-gray-300 hover:text-black"
                     viewBox="0 0 250 250"
@@ -175,31 +152,29 @@ const BestsellingDesigns = () => {
                   >
                     <path d="M29.3 129.8C22.8 121.3 1.6 92.1.4 72.4-.8 52.3 4.1 36.2 15 24.6 30.1 8.5 51.4 6.8 59.9 6.8c1.3 0 2.2 0 2.8.1 16.2.4 39.5 7.6 58.9 39.4l3.4 5.6 3.6-5.5c16.8-25.7 37.1-39 60.3-39.5 3 0 28.9-.9 48 20.6 7.2 8.1 15.1 22.5 12.5 45.6-1.9 16.9-16.2 39.3-24.3 50.4-11.8 16.1-88.5 108.3-100.2 122L29.3 129.8z" />
                   </svg>
-                </div>
-              </button>
-            </div>
-
-            {/* Card content */}
-            <a href={item.link}>
-              <img
-                src={item.imageUrl}
-                alt={item.title}
-                className="w-full h-60 object-cover rounded-t-lg"
-              />
-              <div className="p-4">
-                <h3 className="text-sm font-medium text-gray-900 truncate">
-                  {item.title}
-                </h3>
-                <p className="text-xs font-semibold text-gray-600 mt-1">
-                  {item.price}
-                </p>
+                </button>
               </div>
-            </a>
-          </div>
-        ))}
-      </div>
-    </div>
+
+              <a href={item.link}>
+                <img
+                  src={item.imageUrl}
+                  alt={item.title}
+                  className="w-full h-60 object-cover rounded-t-lg"
+                />
+                <div className="p-4">
+                  <h3 className="text-sm font-medium text-gray-900 truncate">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs font-semibold text-gray-600 mt-1">
+                    {item.price}
+                  </p>
+                </div>
+              </a>
+            </div>
+          ))}
+        </div>
+      </section></>
   );
 };
 
-export default BestsellingDesigns;
+export default FeaturedSeller;

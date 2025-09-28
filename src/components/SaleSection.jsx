@@ -1,4 +1,3 @@
-// src/components/SaleSection.jsx
 import React from "react";
 
 const saleItems = [
