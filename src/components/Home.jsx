@@ -11,6 +11,7 @@ import TodayTopDeals from './TodayTopDeals'
 import FeaturedSeller from './FeaturedSeller'
 import MagazineSection from './MagazineSection'
 import InteriorDesigners from './InteriorDesigners'
+import PromiseSection from './PromiseSection'
 
 const Home = () => {
   return (
@@ -26,6 +27,7 @@ const Home = () => {
           <FeaturedSeller />
           <MagazineSection />
           <InteriorDesigners />
+          <PromiseSection />
   
       </>
   )
