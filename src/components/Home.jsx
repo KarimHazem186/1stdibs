@@ -12,6 +12,7 @@ import FeaturedSeller from './FeaturedSeller'
 import MagazineSection from './MagazineSection'
 import InteriorDesigners from './InteriorDesigners'
 import PromiseSection from './PromiseSection'
+import TrendingCreators from './TrendingCreators'
 
 const Home = () => {
   return (
@@ -28,6 +29,7 @@ const Home = () => {
           <MagazineSection />
           <InteriorDesigners />
           <PromiseSection />
+          <TrendingCreators />
   
       </>
   )
