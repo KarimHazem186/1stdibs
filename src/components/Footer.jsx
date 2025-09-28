@@ -22,7 +22,7 @@ const Footer = () => {
               style={{
                 fontWeight: "100",
                 fontSize: "14px",
-                color: "#737171ff",
+                color: "#504c4cff",
               }}
             >
               <li className="font-w">
@@ -83,7 +83,7 @@ const Footer = () => {
               style={{
                 fontWeight: "100",
                 fontSize: "14px",
-                color: "#737171ff",
+                color: "#504c4cff",
               }}
             >
               <li>
@@ -129,7 +129,7 @@ const Footer = () => {
               style={{
                 fontWeight: "100",
                 fontSize: "14px",
-                color: "#737171ff",
+                color: "#504c4cff",
               }}
             >
               <li>
@@ -182,7 +182,7 @@ const Footer = () => {
               style={{
                 fontWeight: "100",
                 fontSize: "14px",
-                color: "#737171ff",
+                color: "#504c4cff",
               }}
             >
               <li>
